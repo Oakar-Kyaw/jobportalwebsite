@@ -55,7 +55,7 @@ const sendJsonWebToken=async function(user,statusCode,res){
    let token= await user.getjsontoken();
    res
    .status(statusCode)
-   .cookie('token',token,{maxAge:4*60*60*1000, httpOnly: true,sameSite : 'strict', signed: true})
+   .cookie('token',token,{maxAge:4*60*60*1000, httpOnly: true,sameSite : 'strict'})
    .json({success:true,token,user})
 }
 
