@@ -21,10 +21,8 @@ app.use(bodyparser.urlencoded({
 
 
 app.use(cookieParser());
-app.use('*',cors({
-    origin:true,          
-    optionSuccessStatus:200,
-    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+app.use("*",cors({
+    origin:true,         
     credentials: true
 }));;
 app.use(ErrorHandler);
