@@ -15,11 +15,7 @@ export const LoginPage =()=>{
        const dispatch = useDispatch();
        const navigate = useNavigate();
        let isLoggedIn =  JSON.parse(localStorage.getItem('userInfo'));
-       useEffect(()=>{
-        isLoggedIn ?
-         navigate('/') 
-         : navigate('/login');
-       },[])
+       
 
        const validationSchema = yup.object({
          email: yup
