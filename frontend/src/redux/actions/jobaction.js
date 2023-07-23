@@ -7,7 +7,7 @@ import  "react-toastify/dist/ReactToastify.css";
 export const JobLoadAction=(pageNumber,keyword="",cate="", location="")=> async (dispatch)=>{
   dispatch({type:Job_Load_Request})
   try {
-    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/all?pageNumber=${pageNumber}&keyword=${keyword}&cates=${cate}&location=${location}`); 
+    let datas=await axios.get(`/api/job/all?pageNumber=${pageNumber}&keyword=${keyword}&cates=${cate}&location=${location}`); 
     
     dispatch({
         type:Job_Load_Success,
