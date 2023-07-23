@@ -64,7 +64,6 @@ const sendJsonWebToken=async function(user,statusCode,res){
 exports.logout= function(req,res,next){
    res.clearCookie('token');
    res
-   .status(200)
    .json({
       success:true,
       message:"Successfully logout"
