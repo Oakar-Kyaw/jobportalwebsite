@@ -47,12 +47,13 @@ exports.signin= async function(req,res,next){
       return next(new ErrorResponse("Password doesn't Match",400))
    }
   let usernotpassword= await User.findOne({email}).select("-password");
-  sendJsonWebToken(usernotpassword,200,res);
+  sendJsonWebToken(usernotpassword,204,res);
    
 }
 
 const sendJsonWebToken=async function(user,statusCode,res){
    let token= await user.getjsontoken();
+   console.log("token is "+ token);
    res
    .status(statusCode)
    .cookie('token',token,{maxAge:4*60*60*1000, httpOnly: true,sameSite : 'strict'})
