@@ -53,9 +53,8 @@ exports.signin= async function(req,res,next){
 
 const sendJsonWebToken=async function(user,statusCode,res){
    let token= await user.getjsontoken();
-   console.log("token is "+ token);
+  
    res
-   .status(statusCode)
    .cookie('token',token,{maxAge:4*60*60*1000, httpOnly: true,sameSite : 'strict'})
    .json({success:true,token,user})
 }
