@@ -56,7 +56,8 @@ const sendJsonWebToken=async function(user,statusCode,res){
   
    res
    .cookie('token',token,{maxAge:4*60*60*1000, httpOnly: true,sameSite : 'strict'})
-   .json({success:true,token,user})
+   .json({success:true,token,user});
+   console.log("this is console")
 }
 
 //logout
