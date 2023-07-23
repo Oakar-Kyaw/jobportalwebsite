@@ -7,7 +7,7 @@ import  "react-toastify/dist/ReactToastify.css";
 export const JobTypeAddAction=(value)=>async (dispatch)=>{
    dispatch({type:Job_Type_Add_Request});
    try {
-      let datas= await axios.post('/api/type/create',value);
+      let datas= await axios.post('https://jobsearchwebsite.onrender.com/api/type/create',value);
       
       dispatch({
           type:Job_Type_Add_Success,
@@ -24,7 +24,7 @@ export const JobTypeAddAction=(value)=>async (dispatch)=>{
 export const JobTypeLoadAction=(pageNumber,pageSize)=>async (dispatch)=>{
      dispatch({type:Job_Type_Load_Request});
      try {
-        let data= await axios.get(`/api/type/jobs?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+        let data= await axios.get(`https://jobsearchwebsite.onrender.com/api/type/jobs?pageNumber=${pageNumber}&pageSize=${pageSize}`);
         
         dispatch({
             type:Job_Type_Load_Success,
@@ -39,7 +39,7 @@ export const JobTypeLoadAction=(pageNumber,pageSize)=>async (dispatch)=>{
 export const JobTypeSingleAction=(id)=>async (dispatch)=>{
    dispatch({type:Job_Type_Single_Request});
    try {
-      let datas= await axios.get(`/api/type/${id}`);
+      let datas= await axios.get(`https://jobsearchwebsite.onrender.com/api/type/${id}`);
       
       dispatch({
           type:Job_Type_Single_Success,
@@ -57,7 +57,7 @@ export const EditJobTypeAction=(values,id)=>async (dispatch)=>{
    
    dispatch({type:Job_Type_Edit_Request});
    try {
-      let datas= await axios.put(`/api/type/edit/${id}`,values);
+      let datas= await axios.put(`https://jobsearchwebsite.onrender.com/api/type/edit/${id}`,values);
       
       dispatch({
           type:Job_Type_Edit_Success,
@@ -77,7 +77,7 @@ export const DeleteJobTypeAction=(id)=>async (dispatch)=>{
    
    dispatch({type:Job_Type_Delete_Request});
    try {
-      let datas= await axios.delete(`/api/type/delete/${id}`);
+      let datas= await axios.delete(`https://jobsearchwebsite.onrender.com/api/type/delete/${id}`);
       
       dispatch({
           type:Job_Type_Delete_Success,
