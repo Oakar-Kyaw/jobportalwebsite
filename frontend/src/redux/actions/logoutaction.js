@@ -11,7 +11,7 @@ export const LogOutAction = ()=> async (dispatch)=>{
     
     try {
         //log out action with axios
-        let data = await axios.get("api/logout");
+        let data = await axios.get("https://jobsearchwebsite.onrender.com/api/logout");
         dispatch({
             type:User_LogOut_Success,
             payload:data.data
