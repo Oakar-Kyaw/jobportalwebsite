@@ -83,7 +83,7 @@ export const NavBar=()=> {
   const handleLogOut = () => {
     setAnchorElUser(null);
     dispatch(LogOutAction());
-    window.location.reload();
+   
   };
 
   //getting from saved loaclstorage
