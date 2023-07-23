@@ -10,7 +10,7 @@ export const UserRequestAction= (values)=> async (dispatch)=>{
      
      dispatch({type:User_Sign_Request})
      try {
-        let datas = await axios.post(`/api/signin/`,values);
+        let datas = await axios.post(`https://jobsearchwebsite.onrender.com/api/signin/`,values);
         dispatch({
             type:User_Sign_Success,
             payload:datas.data,
@@ -44,7 +44,7 @@ export const UserSignUpAction = (values)=>async(dispatch)=>{
       dispatch({type:User_SignUp_Request});
 
       try {
-         let datas = await axios.post("/api/signup",values);
+         let datas = await axios.post("https://jobsearchwebsite.onrender.com/api/signup",values);
 
          //when the data get successfully
          dispatch({
@@ -69,7 +69,7 @@ export const UserLoadAction= (page,pageSize)=> async (dispatch)=>{
     
    dispatch({type:User_Load_Request})
    try {
-      let datas = await axios.get(`/api/allusers?pageNumber=${page}&pageSize=${pageSize}`);
+      let datas = await axios.get(`https://jobsearchwebsite.onrender.com/api/allusers?pageNumber=${page}&pageSize=${pageSize}`);
       
       dispatch({
           type:User_Load_Success,
@@ -91,7 +91,7 @@ export const UserEditAction = (values,id)=>async(dispatch)=>{
    dispatch({type:User_Edit_Request});
 
    try {
-      let datas = await axios.put(`/api/user/edit/${id}`,values);
+      let datas = await axios.put(`https://jobsearchwebsite.onrender.com/api/user/edit/${id}`,values);
 
       //when the data get successfully
       dispatch({
@@ -120,7 +120,7 @@ export const UserSingleAction = (id)=>async(dispatch)=>{
    dispatch({type:User_Single_Request});
 
    try {
-      let datas = await axios.get(`/api/user/${id}`);
+      let datas = await axios.get(`https://jobsearchwebsite.onrender.com/api/user/${id}`);
       
       //when the data get successfully
       dispatch({
@@ -147,7 +147,7 @@ export const UserDeleteAction = (id)=>async(dispatch)=>{
    dispatch({type:User_Delete_Request});
 
    try {
-      let datas = await axios.delete(`/api/user/delete/${id}`);
+      let datas = await axios.delete(`https://jobsearchwebsite.onrender.com/api/user/delete/${id}`);
       
       //when the data get deleted successfully
       dispatch({
