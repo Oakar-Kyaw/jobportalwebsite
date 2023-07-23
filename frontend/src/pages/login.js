@@ -16,7 +16,7 @@ export const LoginPage =()=>{
        const navigate = useNavigate();
        let isLoggedIn =  JSON.parse(localStorage.getItem('userInfo'));
        useEffect(()=>{
-        isLoggedIn ?
+        !isLoggedIn ?
          navigate('/') 
          : navigate('/login');
        },[])
