@@ -28,7 +28,7 @@ export const UserRequestAction= (values)=> async (dispatch)=>{
         }
         localStorage.setItem('userInfo', JSON.stringify(userInfo));
         toast.success("Login In Successfully");
-        window.location.reload();
+        
      }
      catch(error){
         dispatch({type:User_Sign_Fail,payload:error})
