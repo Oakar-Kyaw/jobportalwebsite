@@ -10,11 +10,11 @@ export const UserRequestAction= (values)=> async (dispatch)=>{
      
      dispatch({type:User_Sign_Request})
      try {
-        let datas = await axios.post(`https://jobsearchwebsite.onrender.com/api/signin/`,values,
-                                    {
+        let datas = await axios.create({
+                                     baseURL: "https://jobsearchwebsite.onrender.com",
                                      withCredentials:true,
                                      headers: {'Content-Type': 'application/json'}
-                                    });
+                                    }).post(`https://jobsearchwebsite.onrender.com/api/signin/`,values);
         dispatch({
             type:User_Sign_Success,
             payload:datas.data,
