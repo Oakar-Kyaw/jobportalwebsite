@@ -7,7 +7,7 @@ import  "react-toastify/dist/ReactToastify.css";
 export const JobLoadAction=(pageNumber,keyword="",cate="", location="")=> async (dispatch)=>{
   dispatch({type:Job_Load_Request})
   try {
-    let datas=await axios.get(`/api/job/all?pageNumber=${pageNumber}&keyword=${keyword}&cates=${cate}&location=${location}`); 
+    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/all?pageNumber=${pageNumber}&keyword=${keyword}&cates=${cate}&location=${location}`); 
     
     dispatch({
         type:Job_Load_Success,
@@ -26,7 +26,7 @@ export const JobLoadAction=(pageNumber,keyword="",cate="", location="")=> async 
 export const JobByPostUserIdAction=(pageNumber)=> async (dispatch)=>{
   dispatch({type:Job_Load_By_Id_Request})
   try {
-    let datas=await axios.get(`/api/job/apply/userid?pageNumber=${pageNumber}`); 
+    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/apply/userid?pageNumber=${pageNumber}`); 
     
     dispatch({
         type:Job_Load_By_Id_Success,
@@ -47,7 +47,7 @@ export const AddJobAction=(values)=> async (dispatch)=>{
   dispatch({type:Job_Add_Request})
   try {
     //post by axios
-    let datas=await axios.post(`/api/job/create`,values); 
+    let datas=await axios.post(`https://jobsearchwebsite.onrender.com/api/job/create`,values); 
     
     dispatch({
         type:Job_Add_Success,
@@ -70,7 +70,7 @@ export const EditJobAction=(values,id)=> async (dispatch)=>{
   dispatch({type:Job_Edit_Request})
   try {
     //put by axios
-    let datas=await axios.put(`/api/job/edit/${id}`,values); 
+    let datas=await axios.put(`https://jobsearchwebsite.onrender.com/api/job/edit/${id}`,values); 
     
     dispatch({
         type:Job_Edit_Success,
@@ -93,7 +93,7 @@ export const EditJobAction=(values,id)=> async (dispatch)=>{
 export const JobSingleAction=(id)=> async (dispatch)=>{
   dispatch({type:Job_Single_Request})
   try {
-    let datas=await axios.get(`/api/job/${id}`); 
+    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/${id}`); 
     
     dispatch({
         type:Job_Single_Success,
@@ -115,7 +115,7 @@ export const DeleteJobAction=(id)=> async (dispatch)=>{
   try {
     
     //delete by axios
-    let datas=await axios.delete(`/api/job/delete/${id}`); 
+    let datas=await axios.delete(`https://jobsearchwebsite.onrender.com/api/job/delete/${id}`); 
     
     dispatch({
         type:Job_Delete_Success,
@@ -138,7 +138,7 @@ export const AppliedJobAction=(values)=> async (dispatch)=>{
   dispatch({type:Applied_Job_Request})
   try {
     //post by axios
-    let datas=await axios.post(`/api/job/history/create`,values); 
+    let datas=await axios.post(`https://jobsearchwebsite.onrender.com/api/job/history/create`,values); 
     
     dispatch({
         type:Applied_Job_Success,
