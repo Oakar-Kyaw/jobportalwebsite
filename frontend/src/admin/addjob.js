@@ -63,7 +63,8 @@ export const AddJob = ()=>{
         },
         validationSchema: validationSchema,
         onSubmit: (values,action) => {
-          console.log('value is '+JSON.stringify(values))
+          let id = JSON.parse(localStorage.getItem("userInfo")).id;
+          values.id = id;
          dispatch(AddJobAction(values))
         },
       });
