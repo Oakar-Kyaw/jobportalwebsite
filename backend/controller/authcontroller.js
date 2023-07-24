@@ -53,10 +53,10 @@ exports.signin= async function(req,res,next){
 
 const sendJsonWebToken=async function(user,statusCode,res){
    let token= await user.getjsontoken();
-   console.log("cookie is" );
+  
    res.cookie("token",token,{maxAge:4*60*60*1000});
    res.json({success:true,token,user});
-   console.log("pass cookie is" );
+   
 }
 
 //logout
