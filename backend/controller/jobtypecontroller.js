@@ -7,7 +7,7 @@ exports.createJobType =async function (req,res,next){
         //create job type
         let createJobType= await JobType.create({
             jobcategories:req.body.jobcategories,
-            user:req.user.id,
+            user:req.body.id,
         });
         res 
         .status(200)
