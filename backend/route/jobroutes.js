@@ -13,7 +13,7 @@ router.get('/job/all',getAllJob);
 router.get('/job/:id',getSingleJob);
 
 //router for getting  job by userid 
-router.get('/job/apply/userid/:id',getJobByUserId);
+router.get('/job/apply/userid',getJobByUserId);
 
 //router for updating job
 router.put('/job/edit/:id',updateJob);
