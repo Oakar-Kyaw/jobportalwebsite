@@ -10,8 +10,9 @@ import { LoadingComponent } from './loadingcomponent';
 
 export const UserDashboardStat = () => {
     const dispatch = useDispatch();
+    let id = JSON.parse(localStorage.getItem("userInfo")).id;
     useEffect(()=>{
-        dispatch(UserProfileAction());
+        dispatch(UserProfileAction(id));
     },[]);
     const {count,user,loading} = useSelector(state => state.userProfile);
     return (
