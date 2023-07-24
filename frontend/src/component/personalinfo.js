@@ -10,8 +10,9 @@ import { UserEditAction } from '../redux/actions/userrequestaction';
 
 export const PersonalInfo = ()=>{
     const dispatch = useDispatch();
+    let id = JSON.parse(localStorage.getItem("userInfo")).id;
     useEffect(()=>{
-        dispatch(UserProfileAction());
+        dispatch(UserProfileAction(id));
     },[]);
     const {user,loading} = useSelector(state => state.userProfile);
     const validationSchema = yup.object({
