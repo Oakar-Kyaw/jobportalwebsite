@@ -120,7 +120,7 @@ export const UserSingleAction = (id)=>async(dispatch)=>{
    dispatch({type:User_Single_Request});
 
    try {
-      let datas = await axios.get(`https://jobsearchwebsite.onrender.com/api/user/${id}`);
+      let datas = await axios.get(`https://jobsearchwebsite.onrender.com/api/user/${id}`,{withCredentials:true});
       
       //when the data get successfully
       dispatch({
