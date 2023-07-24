@@ -16,7 +16,7 @@ exports.createJob= async function(req,res,next){
             salary:req.body.salary,
             jobtype:req.body.jobtype,
             availiable:req.body.availiable,
-            user:req.user.id
+            user:req.body.id
         });
         res 
         .status(200)
@@ -252,7 +252,7 @@ exports.createAppliedUser =async function (req,res,next){
             return next(new ErrorResponse("Please Login in First",400));
         }
         else {
-            let userId =req.user.id;
+            let userId =id;
             let email= current_user.email;
             let addedUser ={
                 userid:userId,
