@@ -8,12 +8,12 @@ const router=express.Router();
 router.get('/allusers',isAdmin,allusers);
 
 //get one user by id
-router.get('/user/:id',isAuthenticated,singleuser);
+router.get('/user/:id',singleuser);
 
 //edit user
-router.put('/user/edit/:id',isAuthenticated, edituser);
+router.put('/user/edit/:id', edituser);
 
 //delete user
-router.delete('/user/delete/:id',isAuthenticated,isAdmin,deleteuser)
+router.delete('/user/delete/:id',deleteuser)
 
 module.exports = router;
