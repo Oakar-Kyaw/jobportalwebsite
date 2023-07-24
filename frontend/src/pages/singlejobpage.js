@@ -32,7 +32,7 @@ export const SingleJobPage= ()=>{
           toast.error("You Need To Login First")
           return navigate('/login');
         }
-        let userid = JSON.parse(localStorage.getItem("userInfo")).id;
+        let applyuserid = JSON.parse(localStorage.getItem("userInfo")).id;
         let jobid= id;
         let title = getsinglejob && getsinglejob.title;
         let description =  getsinglejob && getsinglejob.description;
@@ -41,7 +41,7 @@ export const SingleJobPage= ()=>{
         let userid = getsinglejob && getsinglejob.user._id;
         let postownername = getsinglejob && getsinglejob.user.firstName+" "+getsinglejob.user.lastName;
         let values = {
-                    id  : userid,
+                    id  : applyuserid,
                   jobid : jobid,
                   title : title,
                   description : description,
