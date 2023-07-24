@@ -21,7 +21,7 @@ export const JobTable = ()=>{
       
        {/* dispatch job load action when home.js run */}
       dispatch(JobLoadAction(page,keyword,cate,location));
-      dispatch(JobByPostUserIdAction(page))
+      dispatch(JobByPostUserIdAction(page,userid))
   },[page,keyword])
     
     const {jobs,count,loading} = useSelector(state=>state.loadJobReucers);
