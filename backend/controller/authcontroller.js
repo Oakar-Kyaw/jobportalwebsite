@@ -72,7 +72,8 @@ exports.logout= function(req,res,next){
 //user profile
 exports.userprofile= async function(req,res){
    //findbyuserid
-   let user= await User.findById(req.user.id).select("-password");
+   let id = req.params.id;
+   let user= await User.findById(id).select("-password");
    let count= user.jobhistory.length;
    return res
    .status(200)
