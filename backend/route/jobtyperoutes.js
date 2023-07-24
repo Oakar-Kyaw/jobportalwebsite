@@ -13,10 +13,10 @@ router.get('/type/jobs', jobTypes);
 router.get('/type/:jobid', singlejobType);
 
 //update job type by id
-router.put('/type/edit/:id',isAuthenticated,isAdmin, updateJobType);
+router.put('/type/edit/:id', updateJobType);
 
 //delete job type by id
-router.delete('/type/delete/:id',isAuthenticated, isAdmin, deleteJobType);
+router.delete('/type/delete/:id', deleteJobType);
 
 
 module.exports = router;
