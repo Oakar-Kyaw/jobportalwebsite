@@ -26,7 +26,7 @@ export const JobLoadAction=(pageNumber,keyword="",cate="", location="")=> async 
 export const JobByPostUserIdAction=(pageNumber,id)=> async (dispatch)=>{
   dispatch({type:Job_Load_By_Id_Request})
   try {
-    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/apply/userid/{id}?pageNumber=${pageNumber}`); 
+    let datas=await axios.get(`https://jobsearchwebsite.onrender.com/api/job/apply/userid?pageNumber=${pageNumber}&id={id}`); 
     
     dispatch({
         type:Job_Load_By_Id_Success,
