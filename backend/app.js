@@ -22,7 +22,7 @@ app.use(bodyparser.urlencoded({
 app.use(cookieParser());
 app.use("*",cors({
     origin:true,         
-    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+    methods: ['POST', 'PUT', 'GET', 'DELETE', 'OPTIONS', 'HEAD'],
     credentials: true
 }));;
 app.use(ErrorHandler);
