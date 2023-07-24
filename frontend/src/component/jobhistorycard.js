@@ -10,10 +10,11 @@ import { Box, Typography } from '@mui/material';
 
 export const JobHistoryCard = ()=>{
     const dispatch = useDispatch();
+    let id = JSON.parse(localStorage.getItem("userInfo")).id;
     
     useEffect(()=>{
      
-       dispatch(UserProfileAction())
+       dispatch(UserProfileAction(id))
     },[])
     
     const {loading,user}= useSelector(state => state.userProfile);
