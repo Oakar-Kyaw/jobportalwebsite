@@ -34,6 +34,7 @@ exports.createJob= async function(req,res,next){
 exports.getAllJob= async function(req,res,next){
 
     try {
+        
         //to show total job in admin panel
         let totaljobs= await Job.find().countDocuments();
         //search by location
@@ -147,6 +148,7 @@ exports.getSingleJob= async function(req,res,next){
     try {
         //get one job from database
         let getSingleJob= await Job.findById(req.params.id).populate('jobtype','jobcategories').populate('user','email').populate('user','firstName' +' '+'lastName');
+        console.log("this is cookie "+ req.cookies.token);
         res
         .status(200)
         .json({
