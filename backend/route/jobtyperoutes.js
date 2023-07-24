@@ -4,7 +4,7 @@ const { createJobType, jobTypes, updateJobType, deleteJobType, singlejobType } =
 const router= express.Router();
 
 //route for creating job type 
-router.post('/type/create',isAuthenticated,isAdmin,createJobType);
+router.post('/type/create',createJobType);
 
 //get all job type
 router.get('/type/jobs', jobTypes);
