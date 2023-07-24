@@ -119,7 +119,7 @@ exports.getAllJob= async function(req,res,next){
 
 //get the job by post user id
 exports.getJobByUserId= async function(req,res,next){
-   let id = req.user.id;
+   let {id} = req.body;
    let pageNumber = req.query.pageNumber;
     try {
            let PageSize = 5;
@@ -205,9 +205,9 @@ exports.deleteJob= async function(req,res,next){
 exports.createJobHistory =async function (req,res,next){
     try { 
         //create job history
-
-        let {jobid,title,description,salary,location,userid,postownername}=req.body;
-        let current_user= await User.findOne({_id:req.user.id});
+        
+        let {id,jobid,title,description,salary,location,userid,postownername}=req.body;
+        let current_user= await User.findOne({_id:id});
         
         if(!current_user){
             return next(new ErrorResponse("Please Login in First",400));
@@ -245,8 +245,8 @@ exports.createAppliedUser =async function (req,res,next){
     try { 
         //create applied user
 
-        let {jobid}=req.body;
-        let current_user= await User.findOne({_id:req.user.id});
+        let {id,jobid}=req.body;
+        let current_user= await User.findOne({_id:id});
         let current_job= await Job.findOne({_id:jobid});
         if(!current_user){
             return next(new ErrorResponse("Please Login in First",400));
