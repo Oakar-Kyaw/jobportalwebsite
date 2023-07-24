@@ -5,7 +5,7 @@ const {allusers, singleuser, edituser, deleteuser} =require('../controller/userc
 const router=express.Router();
 
 //get all users
-router.get('/allusers',isAdmin,allusers);
+router.get('/allusers',allusers);
 
 //get one user by id
 router.get('/user/:id',singleuser);
