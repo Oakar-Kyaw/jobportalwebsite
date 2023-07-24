@@ -119,7 +119,7 @@ exports.getAllJob= async function(req,res,next){
 
 //get the job by post user id
 exports.getJobByUserId= async function(req,res,next){
-   let id = req.params.id;
+   let id = req.query.id;
    let pageNumber = req.query.pageNumber;
     try {
            let PageSize = 5;
