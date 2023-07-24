@@ -28,6 +28,8 @@ export const AddCategory = ()=>{
             },
             validationSchema: validationSchema,
             onSubmit: (values,action) => {
+                let id = JSON.parse(localStorage.getItem("userInfo")).id;
+                values.id= id;
               dispatch(JobTypeAddAction(values));
               action.resetForm();
               
