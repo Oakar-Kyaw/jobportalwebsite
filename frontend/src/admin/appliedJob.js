@@ -7,9 +7,9 @@ import { Box, Pagination, Typography } from "@mui/material"
 export const AppliedJob = ()=>{
     const dispatch = useDispatch();
     const [page,setPage] = useState(1);
-
+    let id = JSON.parse(localStorage.getItem("userInfo")).id;
     useEffect(()=>{
-        dispatch(JobByPostUserIdAction(page))
+        dispatch(JobByPostUserIdAction(page,id))
     },[page]);
 
 
