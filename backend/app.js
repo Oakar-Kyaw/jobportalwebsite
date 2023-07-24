@@ -15,7 +15,6 @@ const jobRoutes=require('./route/jobroutes');
 app.use(morgan('dev'));
 app.use(bodyparser.json({limit:'5mb'}));
 app.use(bodyparser.urlencoded({
-    limit:'5mb',
     extended:true
 }));
 
