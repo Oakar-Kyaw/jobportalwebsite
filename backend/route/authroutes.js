@@ -13,6 +13,6 @@ router.post('/signin',signin);
 router.get('/logout',logout);
 
 //my profile
-router.get('/me',isAuthenticated,userprofile);
+router.get('/me/:id',isAuthenticated,userprofile);
 
 module.exports= router;
