@@ -29,6 +29,21 @@ const HomePage = ()=>{
 
     const {jobs,count,loading,SetUniqueLocation} = useSelector(state=>state.loadJobReucers);
     
+    let locations = [];
+    if(SetUniqueLocation && SetUniqueLocation.length !== 0){
+    
+       locations = SetUniqueLocation.reduce((location,nextlocation)=>{
+     
+          var overlap_location = location.filter((e)=> e.location == nextlocation.location);
+          
+          if(overlap_location.length <= 0) {
+               location.push(nextlocation)
+          } 
+        return location;
+      },[])
+      
+    }
+    
       {/* This is to change category  param updating from formcomponent*/}
     const handleChangeCate=(event)=>{
             setCate(event.target.value);
@@ -77,9 +92,9 @@ const HomePage = ()=>{
                             
                            </MenuItem>
                           {
-                            SetUniqueLocation && SetUniqueLocation.length !== 0
+                            locations && locations.length !== 0
                              ?
-                             SetUniqueLocation.map((location,i)=>
+                             locations.map((location,i)=>
                              <MenuItem
                               key={i}
                             >
